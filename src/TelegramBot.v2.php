@@ -351,4 +351,38 @@ class TelegramBot {
     public function getUpdates() {
         return json_decode($this->sendRequest("getUpdates"), true);
     }
+
+    /**
+     * Edite le média (photo) + caption + boutons d'un message existant
+     * Méthode essentielle pour la navigation fluide manga
+     *
+     * @param int|string $chatId
+     * @param int $messageId
+     * @param string $photoUrl URL publique ou file_id
+     * @param string $caption Nouvelle légende
+     * @param array|null $buttons Inline keyboard (tableau de lignes)
+     * @return string Réponse API brute
+     */
+    public function editMessageMedia($chatId, $messageId, $photoUrl, $caption = "", $buttons = null) {
+        $media = [
+            "type"      => "photo",
+            "media"     => $photoUrl,
+            "caption"   => $caption,
+            "parse_mode"=> "HTML"   // ou MarkdownV2 si tu préfères
+        ];
+
+        $parameters = [
+            "chat_id"    => $chatId,
+            "message_id" => $messageId,
+            "media"      => json_encode($media)   // ← très important : JSON string
+        ];
+
+        if ($buttons !== null) {
+            $parameters["reply_markup"] = json_encode([
+                 "inline_keyboard" => $buttons
+            ]);
+        }
+
+        return $this->sendRequest("editMessageMedia", $parameters);
+    }
 }
