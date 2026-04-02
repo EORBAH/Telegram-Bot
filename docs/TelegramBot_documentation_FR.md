@@ -3,7 +3,7 @@
 **Auteur** : Elhadj Oumar Rafiou Bah (Eor_bah545)\
 **Copyright** : © 2025 Elhadj Oumar Rafiou Bah\
 **Licence** : MIT License\
-**Version** : 1.2.0
+**Version** : 0.1.0
 
 ## Table des matières
 
