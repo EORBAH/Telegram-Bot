@@ -1,0 +1,16 @@
+{
+    "name": "eor_bah545/telegrambot",
+    "description": "",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "EorBah545\\Telegrambot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EORBAH",
+            "email": "eor.bah545@gmail.com"
+        }
+    ]
+}

@@ -49,4 +49,4 @@ print_r($response);
 ?>
 ```
 
-For more detailed documentation on available methods and their usage, please refer to `docs/TelegramBot_documentation.md`.
+For more detailed documentation on available methods and their usage, please refer to `docs/TelegramBot_documentation_FR.md` and `docs/TelegramBot_documentation_class_FR.md`.
